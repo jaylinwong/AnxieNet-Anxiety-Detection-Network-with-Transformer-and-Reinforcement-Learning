@@ -263,5 +263,3 @@ This citation references the DASPS dataset as presented in the paper "DASPS: A D
 Thank you for using AnxieNet! If you have any questions or suggestions, feel free to open an issue or contact me directly.
 
 --- 
-
-This is the English version of your README document.
