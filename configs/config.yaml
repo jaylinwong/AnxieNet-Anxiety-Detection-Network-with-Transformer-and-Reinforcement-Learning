@@ -1,0 +1,77 @@
+# config.yaml
+
+# 数据集配置
+data:
+  # 原始数据路径
+  raw_data_path: "/path/to/raw/data"
+  # 预处理后的数据路径
+  processed_data_path: "/path/to/processed/data"
+  # 多模态数据路径（如皮肤电、眼电等）
+  multimodal_data_path: "/path/to/multimodal/data"
+  # 标签数据路径
+  labels_path: "/path/to/labels"
+  # 输出文件夹（模型、图像等保存路径）
+  output_dir: "./output"
+
+# 模型配置
+model:
+  # 输入维度（特征数量）
+  input_dim: 256
+  # 隐藏层维度（Transformer的隐藏状态维度）
+  hidden_dim: 128
+  # 输出类别数
+  output_dim: 2
+  # Transformer编码器的层数
+  num_layers: 6
+  # Transformer编码器的注意力头数
+  num_heads: 8
+
+# 训练配置
+training:
+  # 训练轮数
+  epochs: 20
+  # 批次大小
+  batch_size: 32
+  # 学习率
+  learning_rate: 0.001
+  # 优化器类型
+  optimizer: "adam"  # 支持 'adam' 或 'sgd'
+  # 损失函数
+  loss_function: "cross_entropy"  # 支持 'cross_entropy' 或 'mse'
+  
+# 强化学习优化配置
+reinforcement_learning:
+  # 奖励衰减因子（Gamma）
+  gamma: 0.99
+
+# 设备配置
+device:
+  # 使用设备（cuda 或 cpu）
+  device_type: "cuda"  # 如果没有GPU，改为 'cpu'
+
+# 日志和保存配置
+logging:
+  # 是否保存模型
+  save_model: true
+  # 模型保存路径
+  model_save_path: "./output/model.pth"
+  # 是否保存训练历史图
+  save_training_history: true
+  # 训练历史图保存路径
+  training_history_path: "./output/training_history.png"
+  
+# 评价和监控配置
+evaluation:
+  # 每多少个epoch进行一次验证
+  validation_interval: 5
+  # 是否打印训练和验证过程中的详细信息
+  verbose: true
+
+# 超参数范围（可用于超参数调优）
+hyperparameter_search:
+  # 批次大小的范围
+  batch_size_range: [16, 32, 64]
+  # 学习率的范围
+  learning_rate_range: [0.0001, 0.001, 0.01]
+  # 隐藏层维度的范围
+  hidden_dim_range: [64, 128, 256]
